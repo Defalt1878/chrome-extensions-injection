@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Script injection",
+  "version": "1.0",
+  "description": "Inject script into page to access it's context, get and set global variables",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "injected.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
